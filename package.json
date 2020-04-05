@@ -1,0 +1,34 @@
+{
+  "name": "@jairjy/storage-tool",
+  "version": "1.0.0",
+  "description": "Javascript Storage tool to use Local and Session Storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jairjy/Storage-Tool.git"
+  },
+  "keywords": [
+    "tool",
+    "localStorage",
+    "local storage",
+    "sessionStorage",
+    "session storage",
+    "wrapper"
+  ],
+  "author": "Jair Jaramillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jairjy/Storage-Tool/issues"
+  },
+  "homepage": "https://github.com/jairjy/Storage-Tool#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
