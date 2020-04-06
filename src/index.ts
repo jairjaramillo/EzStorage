@@ -23,22 +23,16 @@ SOFTWARE.
 ******************************************************************************* */
 
 /**
- * Has a set of static functions that allows to save or load data from localStorage or sessionStorage.
+ * Javascript Storage tool to use Local and Session Storage on objects and other non-string data.
  */
-export default class ezStorage {
-  errorMessage: string;
-
-  constructor() {
-    this.errorMessage = 'ERROR: No web storage support. Using a temporal storage instead';
-  }
-
+export default class EzStorage {
   /**
    * Looks for the storage value on your localStorage, and if it finds it, it returns it, otherwhise it returns NULL.
    * @param {String} storage The name of the storage in localStorage that will be loaded.
    * @param {String} oldStorage (Optional) The name of the storage in localStorage that will be deleted.
    */
 
-  localLoad(storage: string, oldStorage: string = ''): object | null {
+  static localLoad(storage: string, oldStorage: string = ''): object | null {
     if (oldStorage !== '' && localStorage.getItem(oldStorage)) localStorage.removeItem(oldStorage);
     const parsedData: string | null = localStorage.getItem(storage);
     return parsedData ? JSON.parse(parsedData) : null;
@@ -49,7 +43,7 @@ export default class ezStorage {
    * @param {String} storage The name of the storage in sessionStorage that will be loaded.
    * @param {String} oldStorage (Optional) The name of the storage in sessionStorage that will be deleted.
    */
-  sessionLoad(storage: string, oldStorage: string = ''): object | null {
+  static sessionLoad(storage: string, oldStorage: string = ''): object | null {
     if (oldStorage !== null && sessionStorage.getItem(oldStorage)) sessionStorage.removeItem(oldStorage);
     const parsedData: string | null = sessionStorage.getItem(storage);
     return parsedData ? JSON.parse(parsedData) : null;
@@ -60,12 +54,12 @@ export default class ezStorage {
    * @param {String} storage the name of the storage.
    * @param {Object} data the object that will be saved in the storage.
    */
-  localSave(storage: string, data: object): boolean {
-    if (typeof (ezStorage) !== 'undefined') {
+  static localSave(storage: string, data: object): boolean {
+    if (typeof (EzStorage) !== 'undefined') {
       localStorage.setItem(storage, JSON.stringify(data));
       return true;
     }
-    alert(this.errorMessage);
+    console.log('ERROR: No web storage support. Using a temporal storage instead');
     return false;
   }
 
@@ -74,12 +68,12 @@ export default class ezStorage {
    * @param {String} storage the name of the storage.
    * @param {Object} data the object that will be saved in the storage.
    */
-  sessionSave(storage: string, data: object): boolean {
-    if (typeof (ezStorage) !== 'undefined') {
+  static sessionSave(storage: string, data: object): boolean {
+    if (typeof (EzStorage) !== 'undefined') {
       sessionStorage.setItem(storage, JSON.stringify(data));
       return true;
     }
-    alert(this.errorMessage);
+    console.log('ERROR: No web storage support. Using a temporal storage instead');
     return false;
   }
 }

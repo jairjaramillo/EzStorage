@@ -1,7 +1,7 @@
 {
   "name": "ez-storage",
-  "version": "0.1.2",
-  "description": "Javascript Storage tool to use Local and Session Storage",
+  "version": "0.1.5",
+  "description": "Javascript Storage tool to use Local and Session Storage on objects and other non-string data",
   "main": "./dist/index.js",
   "scripts": {
     "start":"node .",
