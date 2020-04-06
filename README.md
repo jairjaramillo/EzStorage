@@ -56,7 +56,7 @@ For more information about the parameters and outputs, please look at the declar
 
 Clone this GitHub repository:
 ```sh
-git clone https://github.com/jairjy/ezStorage.git
+git clone https://github.com/jairjy/EzStorage.git
 ```
 Go to the repository folder and install the NPM modules:
 
