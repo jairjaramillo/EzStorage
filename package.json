@@ -1,8 +1,8 @@
 {
-  "name": "@jairjy/storage-tool",
+  "name": "@jairjy/ez-storage",
   "version": "1.0.0",
   "description": "Javascript Storage tool to use Local and Session Storage",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "start":"node .",
     "dev": "tsc --watch",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jairjy/Storage-Tool.git"
+    "url": "git+https://github.com/jairjy/ezStorage.git"
   },
   "keywords": [
     "tool",
@@ -24,9 +24,9 @@
   "author": "Jair Jaramillo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jairjy/Storage-Tool/issues"
+    "url": "https://github.com/jairjy/ezStorage-Tool/issues"
   },
-  "homepage": "https://github.com/jairjy/Storage-Tool#readme",
+  "homepage": "https://github.com/jairjy/ezStorage-Tool#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",

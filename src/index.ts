@@ -25,7 +25,7 @@ SOFTWARE.
 /**
  * Has a set of static functions that allows to save or load data from localStorage or sessionStorage.
  */
-export default class Storage {
+export default class ezStorage {
   errorMessage: string;
 
   constructor() {
@@ -37,7 +37,8 @@ export default class Storage {
    * @param {String} storage The name of the storage in localStorage that will be loaded.
    * @param {String} oldStorage (Optional) The name of the storage in localStorage that will be deleted.
    */
-  localLoad(storage: string, oldStorage: string = '') {
+
+  localLoad(storage: string, oldStorage: string = ''): object | null {
     if (oldStorage !== '' && localStorage.getItem(oldStorage)) localStorage.removeItem(oldStorage);
     const parsedData: string | null = localStorage.getItem(storage);
     return parsedData ? JSON.parse(parsedData) : null;
@@ -48,7 +49,7 @@ export default class Storage {
    * @param {String} storage The name of the storage in sessionStorage that will be loaded.
    * @param {String} oldStorage (Optional) The name of the storage in sessionStorage that will be deleted.
    */
-  sessionLoad(storage: string, oldStorage: string = '') {
+  sessionLoad(storage: string, oldStorage: string = ''): object | null {
     if (oldStorage !== null && sessionStorage.getItem(oldStorage)) sessionStorage.removeItem(oldStorage);
     const parsedData: string | null = sessionStorage.getItem(storage);
     return parsedData ? JSON.parse(parsedData) : null;
@@ -59,8 +60,8 @@ export default class Storage {
    * @param {String} storage the name of the storage.
    * @param {Object} data the object that will be saved in the storage.
    */
-  localSave(storage: string, data: object) {
-    if (typeof (Storage) !== 'undefined') {
+  localSave(storage: string, data: object): boolean {
+    if (typeof (ezStorage) !== 'undefined') {
       localStorage.setItem(storage, JSON.stringify(data));
       return true;
     }
@@ -73,8 +74,8 @@ export default class Storage {
    * @param {String} storage the name of the storage.
    * @param {Object} data the object that will be saved in the storage.
    */
-  sessionSave(storage: string, data: object) {
-    if (typeof (Storage) !== 'undefined') {
+  sessionSave(storage: string, data: object): boolean {
+    if (typeof (ezStorage) !== 'undefined') {
       sessionStorage.setItem(storage, JSON.stringify(data));
       return true;
     }
