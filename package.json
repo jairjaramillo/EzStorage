@@ -2,8 +2,11 @@
   "name": "@jairjy/storage-tool",
   "version": "1.0.0",
   "description": "Javascript Storage tool to use Local and Session Storage",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
+    "start":"node .",
+    "dev": "tsc --watch",
+    "build":"tsc",
     "test": "jest"
   },
   "repository": {
