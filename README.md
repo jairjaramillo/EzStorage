@@ -42,13 +42,13 @@ import EzStorage from 'ez-storage';
 
 ## Usage
 
-EzStorage.localLoad: Looks for the storage value on your localStorage, and if it finds it, it returns it, otherwhise it returns NULL.
+**EzStorage.localLoad:** Looks for the storage value on your localStorage, and if it finds it, it returns it, otherwhise it returns NULL.
 
-EzStorage.sessionLoad: Looks for the storage value on your sessionStorage, and if it finds it, it returns it, otherwhise it returns NULL.
+**EzStorage.sessionLoad:** Looks for the storage value on your sessionStorage, and if it finds it, it returns it, otherwhise it returns NULL.
 
-EzStorage.localSave: Checks if localStorage is available at the moment, and if does, saves the data into the selected storage.
+**EzStorage.localSave:** Checks if localStorage is available at the moment, and if does, saves the data into the selected storage.
 
-EzStorage.sessionSave: Checks if sessionStorage is available at the moment, and if does, saves the data into the selected storage.
+**EzStorage.sessionSave:** Checks if sessionStorage is available at the moment, and if does, saves the data into the selected storage.
 
 For more information about the parameters and outputs, please look at the declaration file and intellisense description.
 
