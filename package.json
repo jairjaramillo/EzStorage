@@ -1,12 +1,14 @@
 {
   "name": "ez-storage",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Javascript Storage tool to use Local and Session Storage on objects and other non-string data",
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "start":"node .",
-    "dev": "tsc --watch",
-    "build":"tsc",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "test": "jest"
   },
   "repository": {
@@ -28,10 +30,20 @@
   },
   "homepage": "https://github.com/jairjy/ezStorage-Tool#readme",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "babel-cli": "^6.26.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "kind-of": "^6.0.3",
+    "typescript": "^3.8.3"
   }
 }
